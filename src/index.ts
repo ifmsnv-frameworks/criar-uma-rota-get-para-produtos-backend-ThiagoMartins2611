@@ -54,7 +54,7 @@ app.get('/produtos', async (req:Request, res:Response)=>{
         });
 
         const produtos = await conn.query("SELECT * FROM produtos");
-        res.send(produtos[0]);
+        res.send(JSON.stringify(produtos[0]));
 
     } catch (error) {
         console.log("erro ao conectar", error)
